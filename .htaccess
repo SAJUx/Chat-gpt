@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# PHP ফাইলগুলোকে clean URL দিতে
+RewriteRule ^setup$ index.php?setup=true [L]
+
+# Render-এ PHP সাপোর্ট enable করতে
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
