@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: telegram-chatgpt-bot
+    env: php
+    plan: free
+    buildCommand: ""
+    startCommand: "php -S 0.0.0.0:$PORT"
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
